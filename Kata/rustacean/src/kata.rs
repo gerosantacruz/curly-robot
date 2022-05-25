@@ -5,7 +5,7 @@ pub fn hello() {
 
 pub fn accum(s:&str)-> String {
     //your codei
-    let mut wordList = Vec::<String>::with_capacity(s.len());
+    let mut word_list = Vec::<String>::with_capacity(s.len());
     for (i,c) in s.chars().enumerate(){
       //println!("{}",i);
 
@@ -13,13 +13,11 @@ pub fn accum(s:&str)-> String {
       test.push_str(&c.to_string().to_uppercase());
       test.push_str(&c.to_string().to_lowercase().repeat(i));
 
-      wordList.push(test);
-      println!("{}",wordList.join("-"))
+      word_list.push(test);
 
     }
 
-    return "test".to_string();
-
+    return word_list.join("-");
     //Completed
 }
 
