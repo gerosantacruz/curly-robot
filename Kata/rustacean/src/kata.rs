@@ -3,9 +3,24 @@ pub fn hello() {
     println!("Hello from a module");
 }
 
-fn accum(s:&str)->String {
+pub fn accum(s:&str)-> String {
     //your codei
-    
+    let mut wordList = Vec::<String>::with_capacity(s.len());
+    for (i,c) in s.chars().enumerate(){
+      //println!("{}",i);
+
+      let mut test = String::from("");
+      test.push_str(&c.to_string().to_uppercase());
+      test.push_str(&c.to_string().to_lowercase().repeat(i));
+
+      wordList.push(test);
+      println!("{}",wordList.join("-"))
+
+    }
+
+    return "test".to_string();
+
+    //Completed
 }
 
 
